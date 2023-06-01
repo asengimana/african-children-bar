@@ -43,7 +43,7 @@ export default function Drinks() {
   }, [categoryId]);
   return (
     <div>
-      <section className="my-5 py-5" id="drinks">
+      <section className="my-5 py-1" id="drinks">
         <Container>
           <Row>
             <Container>

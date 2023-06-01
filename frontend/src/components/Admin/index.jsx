@@ -15,7 +15,7 @@ export default function Admin() {
     <div>
       <section className="my-5 py-5" id="drinks">
         <Container>
-          <h1 className="section-title">Admin</h1>
+          <h1 className="section-title">Tableau de bord</h1>
 
           <Row>
             <Col>

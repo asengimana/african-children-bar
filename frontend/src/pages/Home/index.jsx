@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="my-5 py-5" id="home">
+      <section className="my-5 py-1" id="home">
         <Container>
           <Row>
             <Col>
