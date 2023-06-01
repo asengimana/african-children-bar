@@ -28,7 +28,7 @@ export default function Add() {
     price: "",
   });
   const [categories, setCategories] = useState([]);
-  const categoriesURL = "http://localhost:8800/api/categories";
+  const categoriesURL = "https://african-children.onrender.com/api/categories";
   useEffect(() => {
     const getAllCategories = async () => {
       try {
@@ -45,7 +45,7 @@ export default function Add() {
     setDrink({ ...drink, [e.target.name]: e.target.value });
     //console.log(drink);
   };
-  const url = "http://localhost:8800/api/drinks";
+  const url = "https://african-children.onrender.com/api/drinks";
   const onSubmitDrink = async (e) => {
     e.preventDefault();
     try {

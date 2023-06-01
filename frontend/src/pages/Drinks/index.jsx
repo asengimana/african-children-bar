@@ -9,7 +9,7 @@ export default function Drinks() {
   const [categoryName, setCategoryName] = useState([]);
   const [categoryImage, setCategoryImage] = useState("");
   const { categoryId } = useParams();
-  const url = `http://localhost:8800/api/categories/${categoryId}`;
+  const url = `https://african-children.onrender.com/api/categories/${categoryId}`;
 
   useEffect(() => {
     const getDrinks = async () => {
@@ -23,7 +23,7 @@ export default function Drinks() {
     getDrinks();
   }, [url]);
 
-  const categoriesURL = "http://localhost:8800/api/categories";
+  const categoriesURL = "https://african-children.onrender.com/api/categories";
   useEffect(() => {
     const getAllCategories = async () => {
       try {

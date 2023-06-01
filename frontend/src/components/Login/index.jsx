@@ -20,7 +20,7 @@ export default function Login() {
   };
   const onSubmitUser = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:8800/api/auth/login";
+    const url = "https://african-children.onrender.com/api/auth/login";
     try {
       const resp = await Axios.post(url, user);
       const token = resp.data;

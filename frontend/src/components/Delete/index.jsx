@@ -7,7 +7,7 @@ export default function Delete() {
   //Delete a drink
   const [message, setMessage] = useState("");
   const { id } = useParams();
-  const url = `http://localhost:8800/api/drinks/${id}`;
+  const url = `https://african-children.onrender.com/api/drinks/${id}`;
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token") && !localStorage.getItem("userId")) {

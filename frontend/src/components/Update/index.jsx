@@ -16,7 +16,7 @@ export default function Update() {
   const [drink, setDrink] = useState({});
   const [message, setMessage] = useState("");
   const { id } = useParams();
-  const url = `http://localhost:8800/api/drinks/${id}`;
+  const url = `https://african-children.onrender.com/api/drinks/${id}`;
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token") && !localStorage.getItem("userId")) {
@@ -35,7 +35,7 @@ export default function Update() {
     getDrink();
   }, [url]);
   const [categories, setCategories] = useState([]);
-  const categoriesURL = "http://localhost:8800/api/categories";
+  const categoriesURL = "https://african-children.onrender.com/api/categories";
   useEffect(() => {
     const getAllCategories = async () => {
       try {

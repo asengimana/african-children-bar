@@ -8,7 +8,7 @@ import Axios from "axios";
 
 export default function List() {
   const [drinks, setDrinks] = useState([]);
-  const url = "http://localhost:8800/api/drinks";
+  const url = "https://african-children.onrender.com/api/drinks";
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token") && !localStorage.getItem("userId")) {

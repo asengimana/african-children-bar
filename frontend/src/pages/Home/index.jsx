@@ -8,7 +8,7 @@ import Axios from "axios";
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
-  const url = "http://localhost:8800/api/categories";
+  const url = "https://african-children.onrender.com/api/categories";
   useEffect(() => {
     const getAllCategories = async () => {
       try {

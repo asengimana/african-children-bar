@@ -14,7 +14,10 @@ export default function Signup() {
   const onSubmitUser = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post("http://localhost:8800/api/auth/signup", user);
+      await Axios.post(
+        "https://african-children.onrender.com/api/auth/signup",
+        user
+      );
     } catch (error) {
       console.log(error);
     }
