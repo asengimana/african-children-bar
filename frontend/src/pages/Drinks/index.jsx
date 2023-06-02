@@ -4,6 +4,8 @@ import { Col, Container, Row, Accordion, Badge, Image } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 
 export default function Drinks() {
   const [categoryName, setCategoryName] = useState([]);
@@ -25,6 +27,7 @@ export default function Drinks() {
       try {
         const resp = await Axios.get(categoriesURL);
         setCategoryName(resp.data);
+
         for (let i = 0; i < resp.data.length; i++) {
           if (resp.data[i]._id === categoryId) {
             setCategoryName(resp.data[i].name);
@@ -41,21 +44,9 @@ export default function Drinks() {
     <div>
       <section className="my-5 py-1" id="drinks">
         {isLoading ? (
-          <Container>
-            <Row className="gy-4 gy-md-0 mt-4">
-              <Col sm="6" md="12" className="">
-                <h1>Chargement en cours...</h1>
-              </Col>
-            </Row>
-          </Container>
+          <Loader />
         ) : isError ? (
-          <Container>
-            <Row className="gy-4 gy-md-0 mt-4">
-              <Col sm="6" md="12" className="">
-                <h1>Une erreur est survenue...</h1>
-              </Col>
-            </Row>
-          </Container>
+          <Error />
         ) : (
           <Container>
             <Row>

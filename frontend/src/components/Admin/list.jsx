@@ -6,6 +6,8 @@ import { useEffect } from "react";
 
 import Axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../Loader";
+import Error from "../Error";
 export default function List() {
   const url = "https://african-children.onrender.com/api/drinks";
   const navigate = useNavigate();
@@ -14,7 +16,11 @@ export default function List() {
       navigate("/");
     }
   });
-  const { data: drinks, isLoading } = useQuery(["categories"], () => {
+  const {
+    data: drinks,
+    isLoading,
+    isError,
+  } = useQuery(["categories"], () => {
     return Axios.get(url).then((res) => res.data);
   });
 
@@ -22,13 +28,9 @@ export default function List() {
     <div>
       <section className="my-5 py-5" id="drinks-list">
         {isLoading ? (
-          <Container>
-            <Row className="gy-4 gy-md-0 mt-4">
-              <Col sm="6" md="12" className="">
-                <h1>Chargement en cours...</h1>
-              </Col>
-            </Row>
-          </Container>
+          <Loader />
+        ) : isError ? (
+          <Error />
         ) : (
           <Container>
             <h1 className="section-title">

@@ -15,13 +15,10 @@ export default function Footer() {
         <Container>
           <Row className="gy-4 align-items-center">
             <Col md="4">
-              <Navbar.Brand
-                href="#a-propos"
-                className="text-uppercase text-light"
-              >
+              <Navbar.Brand href="/" className="text-uppercase text-light">
                 <span className="brand-name bg-gradient p-1 rounded-3 bg-success">
-                  <span className="text-danger">African</span>{" "}
-                  <span className="text-warning">Children</span>
+                  <span className="text-warning">African</span>{" "}
+                  <span className="text-danger">Children</span>
                 </span>
               </Navbar.Brand>
             </Col>
