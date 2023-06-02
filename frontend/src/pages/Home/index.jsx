@@ -2,25 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Alert, Col, Container, Image, Row } from "react-bootstrap";
 import laCarteImage from "../../assets/la-carte-image.jpg";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import Axios from "axios";
-
+import { useQuery } from "@tanstack/react-query";
 export default function Home() {
-  const [categories, setCategories] = useState([]);
   const url = "https://african-children.onrender.com/api/categories";
-  useEffect(() => {
-    const getAllCategories = async () => {
-      try {
-        const resp = await Axios.get(url);
-        setCategories(resp.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getAllCategories();
-  }, []);
-
+  const { data: categories, isLoading } = useQuery(["categories"], () => {
+    return Axios.get(url).then((res) => res.data);
+  });
   return (
     <div>
       <section className="my-5 py-1" id="home">
@@ -32,17 +21,27 @@ export default function Home() {
           </Row>
           <h1 className="section-title">La Carte</h1>
           <Row className="gy-4 gy-md-0 mt-4">
-            <ul className="drink-categories">
-              {categories.map((category) => (
-                <li key={category._id}>
-                  <Link to={`/drinks/${category._id}`} activeclassname="">
-                    <Alert key={category._id} variant="success">
-                      {category.name}
-                    </Alert>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {isLoading ? (
+              <Container>
+                <Row className="gy-4 gy-md-0 mt-4">
+                  <Col sm="6" md="12" className="">
+                    <h1>Chargement en cours...</h1>
+                  </Col>
+                </Row>
+              </Container>
+            ) : (
+              <ul className="drink-categories">
+                {categories?.map((category) => (
+                  <li key={category._id}>
+                    <Link to={`/drinks/${category._id}`} activeclassname="">
+                      <Alert key={category._id} variant="success">
+                        {category.name}
+                      </Alert>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </Row>
         </Container>
       </section>

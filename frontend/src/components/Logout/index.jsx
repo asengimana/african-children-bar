@@ -8,6 +8,6 @@ export default function Logout() {
     localStorage.setItem("userId", "");
     window.location.reload();
     navigate("/");
-  });
+  }, [navigate]);
   return <div></div>;
 }

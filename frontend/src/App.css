@@ -48,6 +48,9 @@
 .drink-categories li:hover {
   cursor: pointer;
 }
+.category-image {
+  margin: 0 auto;
+}
 a {
   text-decoration: none;
 }
@@ -120,9 +123,11 @@ button.btn:hover {
   display: flex;
   margin-top: 5px;
   flex-direction: row;
-  gap: 10px;
+  justify-content: space-between;
 }
-
+.drink-links .badge {
+  padding: 10px;
+}
 #not-found {
   font-size: 30px;
 }

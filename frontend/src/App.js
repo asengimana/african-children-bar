@@ -13,27 +13,34 @@ import List from "./components/Admin/list";
 import NotFound from "./components/NotFound";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } },
+});
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/drinks/:categoryId" element={<Drinks />} />
-          <Route exact path="/drinks" element={<List />} />
-          <Route exact path="/add" element={<Add />} />
-          <Route exact path="/update/:id" element={<Update />} />
-          <Route exact path="/delete/:id" element={<Delete />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/logout" element={<Logout />} />
-          <Route exact path="/admin" element={<Admin />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/drinks/:categoryId" element={<Drinks />} />
+            <Route exact path="/drinks" element={<List />} />
+            <Route exact path="/add" element={<Add />} />
+            <Route exact path="/update/:id" element={<Update />} />
+            <Route exact path="/delete/:id" element={<Delete />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/logout" element={<Logout />} />
+            <Route exact path="/admin" element={<Admin />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </QueryClientProvider>
     </div>
   );
 }
