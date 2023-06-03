@@ -60,12 +60,18 @@ export default function Drinks() {
                 </Col>
               </Container>
             </Row>
-            <h1 className="section-title">{categoryName}</h1>
-            <Link to="/">
-              <Badge className="categories-link" bg="success">
-                <AiOutlineArrowLeft size={20} />
-              </Badge>
-            </Link>
+            <Row>
+              {" "}
+              <h1 className="section-title">{categoryName}</h1>
+            </Row>
+            <Row>
+              <Link to="/" className="d-flex justify-content-end">
+                <Badge className="categories-link" bg="success">
+                  <AiOutlineArrowLeft size={20} />
+                </Badge>
+              </Link>
+            </Row>
+
             <Row>
               {drinksData?.map((drink) => (
                 <Col md="6" className="text-dark" key={drink._id}>
@@ -88,11 +94,13 @@ export default function Drinks() {
                 </Col>
               ))}
             </Row>
-            <Link to="/">
-              <Badge className="categories-link" bg="success">
-                <AiOutlineArrowLeft size={20} />
-              </Badge>
-            </Link>
+            <Row>
+              <Link to="/" className="d-flex justify-content-end">
+                <Badge className="categories-link" bg="success">
+                  <AiOutlineArrowLeft size={20} />
+                </Badge>
+              </Link>
+            </Row>
           </Container>
         )}
       </section>

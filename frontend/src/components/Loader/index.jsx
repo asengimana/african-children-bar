@@ -8,11 +8,14 @@ export default function Loader() {
         <Container>
           <Row className="justify-content-center">
             <Col xs="8" md="4">
-              <div class="lds-facebook">
-                <div className="bg-success"></div>
-                <div className="bg-warning"></div>
-                <div className="bg-danger"></div>
-              </div>
+              <Container>
+                <h3 className="text-warning">Chargement...</h3>
+                <div class="lds-facebook">
+                  <div className="bg-success"></div>
+                  <div className="bg-warning"></div>
+                  <div className="bg-danger"></div>
+                </div>
+              </Container>
             </Col>
           </Row>
         </Container>

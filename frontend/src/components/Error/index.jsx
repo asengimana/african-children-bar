@@ -4,9 +4,13 @@ export default function Error() {
   return (
     <div>
       <Container>
-        <Row className="gy-4 gy-md-0 mt-4">
+        <Row className="gy-1 gy-md-0 mt-1">
           <Col sm="6" md="12" className="">
-            <h1>Une erreur est survenue, veuillez réessayer ultérieurement </h1>
+            <Container>
+              <h1 className="section-title-error text-danger">
+                Une erreur est survenue, veuillez réessayer ultérieurement.{" "}
+              </h1>
+            </Container>
           </Col>
         </Row>
       </Container>

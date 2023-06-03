@@ -5,7 +5,7 @@ import {
   AiFillInstagram,
   AiFillEnvironment,
   AiFillPhone,
-  AiFillCalendar,
+  AiFillClockCircle,
 } from "react-icons/ai";
 
 export default function Footer() {
@@ -43,7 +43,7 @@ export default function Footer() {
             <Col md="4">
               <p className="horaires">
                 <span className="horaires-icon">
-                  <AiFillCalendar />
+                  <AiFillClockCircle />
                 </span>
                 Lundi : Fermé
                 <br />

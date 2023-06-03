@@ -20,29 +20,36 @@ export default function Home() {
       <section className="my-5 py-1" id="home">
         <Container>
           <Row>
-            <Col>
+            <Col md="12">
               <Image src={laCarteImage} fluid />
             </Col>
           </Row>
-          <h1 className="section-title">La Carte</h1>
+          <Row>
+            <Container>
+              <h1 className="section-title">La Carte</h1>
+            </Container>
+          </Row>
+
           <Row className="gy-4 gy-md-0 mt-4">
-            {isLoading ? (
-              <Loader />
-            ) : isError ? (
-              <Error />
-            ) : (
-              <ul className="drink-categories">
-                {categories?.map((category) => (
-                  <li key={category._id}>
-                    <Link to={`/drinks/${category._id}`} activeclassname="">
-                      <Alert key={category._id} variant="success">
-                        {category.name}
-                      </Alert>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <Col md="12">
+              {isLoading ? (
+                <Loader />
+              ) : isError ? (
+                <Error />
+              ) : (
+                <ul className="drink-categories">
+                  {categories?.map((category) => (
+                    <li key={category._id}>
+                      <Link to={`/drinks/${category._id}`} activeclassname="">
+                        <Alert key={category._id} variant="success">
+                          {category.name}
+                        </Alert>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Col>
           </Row>
         </Container>
       </section>
