@@ -28,6 +28,11 @@ export default function Admin() {
                 <Button variant="success">Liste des boissons</Button>
               </Link>
             </Col>
+            <Col>
+              <Link to="/">
+                <Button variant="success">Page d'accueil</Button>
+              </Link>
+            </Col>
           </Row>
         </Container>
       </section>

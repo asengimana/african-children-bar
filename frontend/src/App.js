@@ -15,6 +15,7 @@ import Logout from "./components/Logout";
 import Footer from "./components/Footer";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Loader from "./components/Loader";
+import Error from "./components/Error";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnWindowFocus: false } },
@@ -28,7 +29,11 @@ function App() {
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/drinks/:categoryId" element={<Drinks />} />
+            <Route
+              exact
+              path="/drinks/:categoryName/:categoryId"
+              element={<Drinks />}
+            />
             <Route exact path="/drinks" element={<List />} />
             <Route exact path="/add" element={<Add />} />
             <Route exact path="/update/:id" element={<Update />} />
@@ -38,6 +43,7 @@ function App() {
             <Route exact path="/logout" element={<Logout />} />
             <Route exact path="/admin" element={<Admin />} />
             <Route exact path="/loader" element={<Loader />} />
+            <Route exact path="/error" element={<Error />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

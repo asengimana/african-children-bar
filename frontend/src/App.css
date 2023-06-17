@@ -127,6 +127,12 @@ button.btn:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+.home-drink-links {
+  position: absolute;
+  right: 35px;
+  font-size: 13px;
+  font-weight: 300;
+}
 .drink-links .badge {
   padding: 10px;
 }
@@ -156,6 +162,10 @@ button.btn:hover {
   position: absolute;
   top: -22px;
 }
+.copyright {
+  text-transform: capitalize;
+  color: white;
+}
 .navbar-toggler-icon {
   background: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(34,193,195, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -168,6 +178,9 @@ button.btn:hover {
     font-size: 13px;
     text-transform: uppercase;
   }
+}
+.loader-text {
+  margin-top: 50px;
 }
 
 .lds-facebook {

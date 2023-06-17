@@ -8,7 +8,8 @@ export default function Error() {
           <Col sm="6" md="12" className="">
             <Container>
               <h1 className="section-title-error text-danger">
-                Une erreur est survenue, veuillez réessayer ultérieurement.{" "}
+                Oups! Une erreur est survenue, veuillez réessayer
+                ultérieurement.{" "}
               </h1>
             </Container>
           </Col>

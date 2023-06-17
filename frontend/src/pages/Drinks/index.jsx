@@ -16,6 +16,7 @@ export default function Drinks() {
   const fetchDrinks = () => {
     return Axios.get(url).then((res) => res.data);
   };
+
   const {
     data: drinksData,
     isLoading,
@@ -65,21 +66,22 @@ export default function Drinks() {
               <h1 className="section-title">{categoryName}</h1>
             </Row>
             <Row>
-              <Link to="/" className="d-flex justify-content-end">
-                <Badge className="categories-link" bg="success">
-                  <AiOutlineArrowLeft size={20} />
-                </Badge>
-              </Link>
+              <Col>
+                <Link to="/" className="d-flex justify-content-end">
+                  <Badge className="categories-link" bg="success">
+                    <AiOutlineArrowLeft size={20} />
+                  </Badge>
+                </Link>
+              </Col>
             </Row>
 
             <Row>
-              {drinksData?.map((drink) => (
-                <Col md="6" className="text-dark" key={drink._id}>
-                  <Accordion key={drink._id} flush>
+              <Col className="text-dark">
+                <Accordion flush>
+                  {drinksData?.map((drink) => (
                     <Accordion.Item eventKey={drink._id} key={drink._id}>
                       <Accordion.Header>
                         <span className="drink-name">{drink.name}</span>
-
                         <Badge className="drink-price" bg="secondary">
                           {drink.price}€
                         </Badge>
@@ -90,16 +92,18 @@ export default function Drinks() {
                           : drink.ingredients}
                       </Accordion.Body>
                     </Accordion.Item>
-                  </Accordion>
-                </Col>
-              ))}
+                  ))}
+                </Accordion>
+              </Col>
             </Row>
             <Row>
-              <Link to="/" className="d-flex justify-content-end">
-                <Badge className="categories-link" bg="success">
-                  <AiOutlineArrowLeft size={20} />
-                </Badge>
-              </Link>
+              <Col>
+                <Link to="/" className="d-flex justify-content-end">
+                  <Badge className="categories-link" bg="success">
+                    <AiOutlineArrowLeft size={20} />
+                  </Badge>
+                </Link>
+              </Col>
             </Row>
           </Container>
         )}

@@ -27,7 +27,7 @@ export default function Footer() {
                 <span className="location-icon">
                   <AiFillEnvironment />
                 </span>
-                1 rue de la Barre
+                1 Rue de la Barre
                 <br />
                 59800 Lille
               </p>
@@ -56,7 +56,7 @@ export default function Footer() {
             </Col>
             <Col className="col-md-4 text-md-center">
               <ul className="list-unstyled mb-0">
-                <li>© 2023</li>
+                <li>Copyright © 2023 African Children</li>
               </ul>
             </Col>
             <Col className="col-md-4 text-md-end social-links">

@@ -15,13 +15,19 @@ export default function Home() {
   } = useQuery(["categories"], () => {
     return Axios.get(url).then((res) => res.data);
   });
+  const removeAccents = (str) =>
+    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   return (
     <div>
       <section className="my-5 py-1" id="home">
         <Container>
           <Row>
             <Col md="12">
-              <Image src={laCarteImage} fluid />
+              <Image
+                src={laCarteImage}
+                className="rounded mx-auto d-block"
+                fluid
+              />
             </Col>
           </Row>
           <Row>
@@ -31,7 +37,7 @@ export default function Home() {
           </Row>
 
           <Row className="gy-4 gy-md-0 mt-4">
-            <Col md="12">
+            <Col>
               {isLoading ? (
                 <Loader />
               ) : isError ? (
@@ -40,7 +46,13 @@ export default function Home() {
                 <ul className="drink-categories">
                   {categories?.map((category) => (
                     <li key={category._id}>
-                      <Link to={`/drinks/${category._id}`} activeclassname="">
+                      <Link
+                        to={`/drinks/${removeAccents(category.name)
+                          .split(" ")
+                          .join("-")
+                          .toLowerCase()}/${category._id}`}
+                        activeclassname=""
+                      >
                         <Alert key={category._id} variant="success">
                           {category.name}
                         </Alert>

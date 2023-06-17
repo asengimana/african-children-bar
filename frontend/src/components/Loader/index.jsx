@@ -9,7 +9,9 @@ export default function Loader() {
           <Row className="justify-content-center">
             <Col xs="8" md="4">
               <Container>
-                <h3 className="text-warning">Chargement...</h3>
+                <p className="text-warning loader-text">
+                  Chargement en cours...
+                </p>
                 <div class="lds-facebook">
                   <div className="bg-success"></div>
                   <div className="bg-warning"></div>
